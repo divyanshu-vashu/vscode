@@ -116,3 +116,28 @@ If you're still experiencing issues, it might be related to Node.js version or m
 This increases the memory limit to 16GB instead of 8GB, which might help with the build process on M1 Macs.
 
 If you're still encountering issues, please share any error messages that appear during the build process.
+
+###3rd now run this vscode 
+Since you've already compiled the code and tried running electron, let's try launching VSCode properly. For development builds on macOS, you'll need to run these commands in sequence:
+
+1. First, make sure you have the built-in extensions:
+```bash
+npm run download-builtin-extensions
+```
+
+2. Then launch VSCode using:
+```bash
+./scripts/code.sh
+```
+
+If the `code.sh` script doesn't work, you can try the alternative method:
+```bash
+./scripts/code-darwin.sh
+```
+
+These scripts should properly launch the development version of VSCode on your M1 Mac. If you encounter any permission issues with the scripts, you might need to make them executable first:
+```bash
+chmod +x ./scripts/code.sh
+```
+
+If you're still having issues, please share any error messages you see when trying to run these commands.
